@@ -1,0 +1,64 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Profile Card</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <section class="card" data-testid="test-profile-card">
+      <figure data-testid="test-user-avatar-figure">
+        <img
+          data-testid="test-user-avatar"
+          src="images/profile pic.jpg"
+          alt="Profile picture"
+          class="img"
+        />
+      </figure>
+
+      <div class="typo" data-testid="test-user-info">
+        <h1 data-testid="test-user-name">Opeyemi Akinwumi</h1>
+        <p class="bio" data-testid="test-user-bio">
+          I’m a Frontend Engineer with 2 years of hands-on experience building
+          responsive, user-focused web applications. I specialize in React and
+          Tailwind CSS, crafting clean, efficient, and visually engaging
+          interfaces. I’m passionate about turning ideas into smooth, scalable
+          digital experiences through modern frontend development practices.
+        </p>
+
+  
+
+<div class="others" data-testid="test-user-hobbies-dislikes">
+          <div data-testid="test-user-wrapper-hobbies">     <h2 data-testid="test-user-hobbies-heading">Hobbies</h2>
+           <ul class="hobbies" data-testid="test-user-hobbies">
+            <li data-testid="test-user-hobbies-music">Listening to music</li>
+            <li data-testid="test-user-hobbies-novels">Reading novels</li>
+            <li data-testid="test-user-hobbies-travelling">Travelling</li>
+           </ul></div>
+          <div data-testid="test-user-wrapper-dislike">     <h2 data-testid="test-user-dislike-heading">Dislikes</h2>
+           <ul class="hobbies" data-testid="test-user-hobbies">
+            <li data-testid="test-user-dislike-dishonesty">Dishonesty</li>
+            <li data-testid="test-user-dislike-laziness">Laziness</li>
+            <li data-testid="test-user-dislike-internet">Slow internet</li>
+           </ul></div>
+</div>
+
+      <h2 data-testid="test-user-social-heading">Social Media</h2>
+
+        <ul class="socials" data-testid="test-user-social-links">
+            <li ><a href="#" data-testid="test-user-social-instagram target="_blank" class="link" ><img src="images/instagram-167-svgrepo-com.svg" data-testid="test-user-social-instagram-image" alt="Instagram logo"></a></li>
+            <li ><a href="#" data-testid="test-user-social-linkedin target="_blank" id="linkedin" class="link" ><img src="images/linkedin-svgrepo-com.svg" data-testid="test-user-social-linkedin-image" alt="Linkedin logo"></a></li>
+            <li ><a href="#" data-testid="test-user-social-twitter target="_blank" class="link" ><img src="images/twitter-3-svgrepo-com.svg" data-testid="test-user-social-twitter-image" alt="twitter logo"></a></li>
+       
+        </ul>
+
+      </div>
+    </section>
+  </body>
+</html>
