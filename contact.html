@@ -1,0 +1,152 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact Opeyemi Akinwumi</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <section class="card" data-testid="test-about-card">
+      <figure data-testid="test-user-avatar-figure">
+        <img
+          data-testid="test-user-avatar"
+          src="images/profile pic.jpg"
+          alt="Profile picture"
+          class="img"
+        />
+      </figure>
+
+      <div class="typo" id="contact" data-testid="test-contact-wrapper">
+        <h1 data-testid="test-about-head">Contact Me</h1>
+
+        <form id="contactForm">
+          <div class="form-group">
+            <label for="name">Full Name</label>
+            <input type="text" id="name" data-testid="test-contact-name" />
+            <div class="error" data-testid="test-contact-error-name"></div>
+          </div>
+
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" data-testid="test-contact-email" />
+            <div class="error" data-testid="test-contact-error-email"></div>
+          </div>
+
+          <div class="form-group">
+            <label for="subject">Subject</label>
+            <input
+              type="text"
+              id="subject"
+              data-testid="test-contact-subject"
+            />
+            <div class="error" data-testid="test-contact-error-subject"></div>
+          </div>
+
+          <div class="form-group">
+            <label for="message">Message</label>
+            <textarea
+              id="message"
+              data-testid="test-contact-message"
+            ></textarea>
+            <div class="error" data-testid="test-contact-error-message"></div>
+          </div>
+
+          <div
+            class="success"
+            data-testid="test-contact-success"
+            style="display: none"
+          >
+            Your message has been sent successfully!
+          </div>
+
+          <div class="boxx">
+            <a
+              class="a-link"
+              href="index.html"
+              data-testid="test-user-Home-link"
+              >Go back</a
+            >
+            <button type="submit" data-testid="test-contact-submit">
+              Submit
+            </button>
+          </div>
+        </form>
+      </div>
+    </section>
+
+    <script>
+      const form = document.getElementById("contactForm");
+      const successMsg = document.querySelector(
+        "[data-testid='test-contact-success']"
+      );
+
+      form.addEventListener("submit", function (e) {
+        e.preventDefault();
+
+        const name = document.getElementById("name");
+        const email = document.getElementById("email");
+        const subject = document.getElementById("subject");
+        const message = document.getElementById("message");
+
+        const nameErr = document.querySelector(
+          "[data-testid='test-contact-error-name']"
+        );
+        const emailErr = document.querySelector(
+          "[data-testid='test-contact-error-email']"
+        );
+        const subjectErr = document.querySelector(
+          "[data-testid='test-contact-error-subject']"
+        );
+        const messageErr = document.querySelector(
+          "[data-testid='test-contact-error-message']"
+        );
+
+        // Reset previous errors and hide success
+        [nameErr, emailErr, subjectErr, messageErr].forEach(
+          (err) => (err.style.display = "none")
+        );
+        successMsg.style.display = "none";
+
+        let valid = true;
+
+        if (name.value.trim() === "") {
+          nameErr.textContent = "Full name is required.";
+          nameErr.style.display = "block";
+          valid = false;
+        }
+
+        if (email.value.trim() === "") {
+          emailErr.textContent = "Email is required.";
+          emailErr.style.display = "block";
+          valid = false;
+        } else if (!/\S+@\S+\.\S+/.test(email.value)) {
+          emailErr.textContent = "Enter a valid email address.";
+          emailErr.style.display = "block";
+          valid = false;
+        }
+
+        if (subject.value.trim() === "") {
+          subjectErr.textContent = "Subject is required.";
+          subjectErr.style.display = "block";
+          valid = false;
+        }
+
+        if (message.value.trim() === "") {
+          messageErr.textContent = "Message cannot be empty.";
+          messageErr.style.display = "block";
+          valid = false;
+        }
+
+        if (valid) {
+          successMsg.style.display = "block"; // ✅ visible after successful validation
+          form.reset();
+
+          // optional delay to show success message before redirecting
+          setTimeout(() => {
+            window.location.href = "index.html"; // ✅ navigate to /index.html
+          }, 1500);
+        }
+      });
+    </script>
+  </body>
+</html>
